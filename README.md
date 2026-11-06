@@ -2,7 +2,7 @@
 
 ![Calculadora de BTU da loja Friagem](docs/tela.webp)
 
-Site demonstrativo de vendas de ar-condicionado, de uma loja fictícia em Cuiabá. A Friagem, as marcas, os modelos e os preços são inventados. Nada é vendido, enviado ou cobrado.
+Fiz este site demonstrativo de vendas de ar-condicionado, de uma loja fictícia em Cuiabá. A Friagem, as marcas, os modelos e os preços são inventados. Nada é vendido, enviado ou cobrado.
 
 Publicado em: https://toshiro01001.github.io/ar-condicionado/
 

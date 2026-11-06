@@ -386,3 +386,5 @@ tbody th { font-weight: 700; }
   .seg-on { fill: CanvasText; }
   .seg-off { fill: Canvas; }
 }
+.pagina-404 { max-width: 60ch; margin: auto; padding: 14vh 20px; }
+.pagina-404 p { margin: 1em 0; }

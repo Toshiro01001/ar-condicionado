@@ -144,7 +144,7 @@
       el('p', { class: 'plaqueta-btu' }, el('strong', { text: num(p.btu) }), el('span', { text: ' BTU' })),
       lista,
       el('p', { class: 'plaqueta-preco', 'data-preco': p.preco, text: reais(p.preco) }),
-      el('button', { type: 'button', class: 'botao botao-escuro botao-cheio', 'aria-label': 'Adicionar ' + nomeDe(p) + ' ao orçamento', text: 'Adicionar ao orçamento', onclick: function () { adicionar(p.id); } }),
+      el('button', { type: 'button', class: 'botao botao-escuro botao-cheio', 'aria-label': 'Adicionar ao orçamento: ' + nomeDe(p), text: 'Adicionar ao orçamento', onclick: function () { adicionar(p.id); } }),
       el('label', { class: 'marcar-comparar', for: idc }, caixa, el('span', { text: 'Comparar' }), el('span', { class: 'so-leitor', text: ' ' + nomeDe(p) }))
     );
   }
