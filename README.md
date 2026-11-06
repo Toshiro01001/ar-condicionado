@@ -1,8 +1,10 @@
 # Friagem Ar-condicionado (loja de demonstração)
 
+![Calculadora de BTU da loja Friagem](docs/tela.webp)
+
 Site demonstrativo de vendas de ar-condicionado, de uma loja fictícia em Cuiabá. A Friagem, as marcas, os modelos e os preços são inventados. Nada é vendido, enviado ou cobrado.
 
-Publicação prevista: https://toshiro01001.github.io/ar-condicionado/
+Publicado em: https://toshiro01001.github.io/ar-condicionado/
 
 ## O que tem no site
 
@@ -51,4 +53,4 @@ Passe uma pasta como argumento para salvar as capturas de tela.
 
 HTML, CSS e JavaScript puros, sem build e sem bibliotecas. SVG próprio nas ilustrações e no visor. Playwright apenas nos testes.
 
-Desenvolvido por Rodrigo Terroso Junior. O Claude, da Anthropic, foi usado como ferramenta durante o desenvolvimento.
+Desenvolvi este projeto e usei o Claude, da Anthropic, como ferramenta durante o desenvolvimento.
