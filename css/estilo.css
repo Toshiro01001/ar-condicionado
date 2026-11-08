@@ -325,6 +325,10 @@ tbody th { font-weight: 700; }
 .texto-corrido h2:first-child { margin-top: 0; }
 .texto-corrido p, .texto-corrido li { max-width: 66ch; }
 .texto-corrido li { margin-bottom: .375rem; }
+.detalhes-tecnicos { margin-top: 1.5rem; border-top: 1px solid var(--linha); border-bottom: 1px solid var(--linha); }
+.detalhes-tecnicos summary { cursor: pointer; min-height: 44px; display: list-item; padding: .75rem 0; font-weight: 700; color: var(--friagem); }
+.detalhes-tecnicos ul { margin: 0 0 1rem; padding-left: 1.25rem; }
+.detalhes-tecnicos code { font-family: Consolas, "Liberation Mono", Menlo, monospace; font-size: .92em; background: var(--gabinete); padding: 0 .25em; border-radius: 3px; overflow-wrap: anywhere; }
 
 /* ---------- rodapé ---------- */
 .rodape { background: var(--petroleo); color: #fff; padding: 1.75rem var(--folga); text-align: center; }
