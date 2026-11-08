@@ -103,7 +103,7 @@
     </svg>
     <div class="heroi-texto">
       <h1 tabindex="-1">Cuiabá é quente. <br>Seu quarto não <br>precisa ser.</h1>
-      <p>Descubra quantos BTUs o seu ambiente pede, compare modelos lado a lado e veja o preço já com a instalação.</p>
+      <p>Descubra quantos BTUs o seu ambiente pede (BTU é a medida da potência de um ar-condicionado), compare modelos lado a lado e veja o preço já com a instalação. Comece pelo botão "Calcular meu BTU".</p>
       <div class="acoes">
         <a class="botao botao-escuro" href="#/calculadora">Calcular meu BTU</a>
         <a class="botao botao-contorno" href="#/catalogo">Ver o catálogo</a>
@@ -112,19 +112,19 @@
   </div>
 
   <div class="bloco">
-    <h2>Da conta à visita técnica</h2>
+    <h2>Como usar o site, em três passos</h2>
     <ol class="trilha">
       <li>
         <h3><a href="#/calculadora">Calcule</a></h3>
-        <p>Informe área, pé-direito, pessoas, equipamentos e sol da tarde. A conta aparece linha por linha.</p>
+        <p>Diga o tamanho do cômodo, quantas pessoas ficam nele e se bate sol da tarde. O site mostra a conta linha por linha e já sugere modelos.</p>
       </li>
       <li>
         <h3><a href="#/catalogo">Compare</a></h3>
-        <p>Filtre por BTU, tipo, tensão e preço. Coloque até 3 modelos lado a lado.</p>
+        <p>Filtre por BTU, tipo, tensão e preço. Marque "Comparar" em até 3 modelos para vê-los lado a lado.</p>
       </li>
       <li>
         <h3><a href="#/orcamento">Orce e peça a visita</a></h3>
-        <p>Some aparelho, instalação e tubulação, simule as parcelas e peça a visita.</p>
+        <p>Aperte "Adicionar ao orçamento" no modelo escolhido. Na tela Orçamento, some a instalação, veja as parcelas e teste o pedido de visita. Nada é cobrado nem enviado de verdade.</p>
       </li>
     </ol>
   </div>
@@ -150,7 +150,7 @@
 <section data-view="catalogo" data-titulo="Catálogo | Friagem (demonstração)" hidden>
   <div class="bloco cabeca">
     <h1 tabindex="-1">Catálogo</h1>
-    <p class="intro">Marcas, modelos e preços inventados para esta demonstração. Marque até 3 modelos para comparar.</p>
+    <p class="intro">Marcas, modelos e preços inventados para esta demonstração. Aperte "Adicionar ao orçamento" no modelo que quiser, ou marque "Comparar" em até 3 modelos para vê-los lado a lado. Os filtros ajudam a achar o aparelho certo para o seu BTU.</p>
   </div>
   <div class="catalogo">
     <details id="filtros-caixa" class="filtros">
@@ -202,7 +202,7 @@
 <section data-view="calculadora" data-titulo="Calculadora de BTU | Friagem (demonstração)" hidden>
   <div class="bloco cabeca">
     <h1 tabindex="-1">Calculadora de BTU</h1>
-    <p class="intro">Ajuste os botões como em um controle remoto. O visor mostra quantos BTUs o ambiente pede.</p>
+    <p class="intro">Aperte os botões + e − ou digite os números do seu cômodo, como em um controle remoto. O visor mostra na hora quantos BTUs (a medida da potência do ar-condicionado) o ambiente pede, e os modelos que servem aparecem no fim da página.</p>
   </div>
   <div class="calc">
     <form id="calc" class="controle" aria-label="Dados do ambiente" novalidate>
@@ -261,7 +261,7 @@
 <section data-view="orcamento" data-titulo="Orçamento e instalação | Friagem (demonstração)" hidden>
   <div class="bloco cabeca">
     <h1 tabindex="-1">Orçamento e instalação</h1>
-    <p class="intro">Todos os valores são exemplos. Nada desta página é enviado a ninguém.</p>
+    <p class="intro">Aqui ficam os aparelhos que você escolheu. Inclua a instalação, escolha em quantas vezes pagar e, se quiser, teste o pedido de visita. Todos os valores são exemplos e nada desta página é enviado a ninguém.</p>
   </div>
   <div class="orc">
       <section aria-labelledby="t-carrinho">
@@ -380,12 +380,26 @@
 <section data-view="como-funciona" data-titulo="Como isto funciona | Friagem (demonstração)" hidden>
   <div class="bloco cabeca">
     <h1 tabindex="-1">Como isto funciona</h1>
-    <p class="intro">A Friagem não existe. Este site é uma demonstração do que uma loja de ar-condicionado pode ter.</p>
+    <p class="intro">A Friagem não existe. Este site é uma demonstração do que uma loja de ar-condicionado pode ter: marcas, modelos, preços e valores de instalação são inventados, e nada é vendido, cobrado ou enviado de verdade.</p>
   </div>
   <div class="bloco bloco-justo texto-corrido">
     <h2>O que acontece por trás</h2>
     <p>O site é feito de arquivos simples: HTML para a estrutura, CSS para a aparência e JavaScript para as contas. Tudo roda no seu navegador, sem servidor e sem serviços de terceiros.</p>
-    <p>Orçamento, comparação, filtros e valores da calculadora ficam guardados no próprio navegador, no recurso chamado localStorage, para não sumirem quando a página recarrega. O formulário de visita não guarda nem envia nada.</p>
+    <p>Orçamento, comparação, filtros e valores da calculadora ficam guardados no próprio navegador, no recurso chamado localStorage (uma memória local que só o seu navegador lê), para não sumirem quando a página recarrega. O formulário de visita não guarda nem envia nada.</p>
+    <details class="detalhes-tecnicos">
+      <summary>Detalhes técnicos</summary>
+      <ul>
+        <li>HTML, CSS e JavaScript puros, sem bibliotecas, sem framework e sem etapa de build.</li>
+        <li>Página única: as telas estão todas em <code>index.html</code> e o JavaScript mostra uma de cada vez conforme o endereço (<code>#/catalogo</code>, <code>#/calculadora</code> e assim por diante).</li>
+        <li>Código separado em três arquivos: <code>js/dados.js</code> (catálogo, valores de instalação, juros e constantes da regra), <code>js/logica.js</code> (as contas, sem nada de tela) e <code>js/app.js</code> (telas, filtros, carrinho, formulário e rotas).</li>
+        <li>Todo dado variável entra na tela por <code>textContent</code>, nunca como HTML montado em texto.</li>
+        <li>Content Security Policy (regra do navegador que limita de onde a página pode carregar coisas) permitindo só arquivos do próprio site; nenhum pedido sai para outros servidores, nem para fontes.</li>
+        <li>Fontes TeX Gyre Heros reduzidas e servidas pelo próprio site, com licença GUST.</li>
+        <li>Carrinho, comparação, filtros e valores da calculadora no <code>localStorage</code>. O site continua funcionando se o <code>localStorage</code> estiver bloqueado ou corrompido.</li>
+        <li>Testes de ponta a ponta com Playwright em <code>tests/fluxos.js</code>, cobrindo computador e celular, contraste, acessibilidade e os cálculos.</li>
+        <li>Hospedado no GitHub Pages. O código está aberto no repositório <code>Toshiro01001/ar-condicionado</code>.</li>
+      </ul>
+    </details>
     <h2>O que dá para adaptar</h2>
     <ul>
       <li>Nome, cores e ilustrações da loja.</li>

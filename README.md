@@ -2,9 +2,18 @@
 
 ![Calculadora de BTU da loja Friagem](docs/tela.webp)
 
-Fiz este site demonstrativo de vendas de ar-condicionado, de uma loja fictícia em Cuiabá. A Friagem, as marcas, os modelos e os preços são inventados. Nada é vendido, enviado ou cobrado.
+Fiz este site demonstrativo de vendas de ar-condicionado, de uma loja fictícia em Cuiabá. Ele mostra como uma loja pode ajudar o cliente a descobrir o tamanho certo de aparelho, comparar modelos e ver o preço já com a instalação. A Friagem, as marcas, os modelos e os preços são inventados. Nada é vendido, enviado ou cobrado.
 
 Publicado em: https://toshiro01001.github.io/ar-condicionado/
+
+## Como usar
+
+1. Na página inicial, aperte "Calcular meu BTU" (BTU é a medida da potência de um ar-condicionado).
+2. Na calculadora, aperte + e − ou digite o tamanho do cômodo, quantas pessoas ficam nele e se bate sol da tarde. O visor mostra o resultado na hora e, no fim da página, aparecem os modelos que servem.
+3. No catálogo, aperte "Adicionar ao orçamento" no modelo que quiser, ou marque "Comparar" em até 3 modelos para vê-los lado a lado.
+4. Na tela Orçamento, inclua a instalação, escolha em quantas vezes pagar e, se quiser, teste o pedido de visita técnica. Nada é enviado de verdade.
+
+Quem quiser saber o que roda por trás encontra a explicação na tela "Como isto funciona", com um bloco "Detalhes técnicos" para quem programa, e nas seções abaixo.
 
 ## O que tem no site
 
@@ -14,7 +23,7 @@ Publicado em: https://toshiro01001.github.io/ar-condicionado/
 - **Dúvidas frequentes** sobre BTU, Inverter, instalação e manutenção.
 - **Como isto funciona**: o que dá para adaptar e o que a versão real precisaria a mais.
 
-## Como funciona
+## Como funciona (parte técnica)
 
 É um site estático de uma página só. As telas ficam em `index.html` e o JavaScript mostra uma de cada vez conforme o endereço (`#/catalogo`, `#/calculadora` e assim por diante). Não há servidor nem serviços de terceiros.
 
