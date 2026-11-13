@@ -1,151 +1,293 @@
 <!doctype html>
 <html lang="pt-BR">
 <head>
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<meta http-equiv="Content-Security-Policy" content="default-src 'none'; script-src 'self'; style-src 'self'; img-src 'self'; font-src 'self'; base-uri 'none'; form-action 'none'">
-<meta name="referrer" content="no-referrer">
-<title>Friagem Ar-condicionado (loja de demonstração)</title>
-<meta name="description" content="Loja de demonstração em Cuiabá: calculadora de BTU, catálogo fictício de ar-condicionado, orçamento de instalação e simulação de parcelas.">
-<meta name="theme-color" content="#0F3642">
-<link rel="canonical" href="https://toshiro01001.github.io/ar-condicionado/">
-<meta property="og:type" content="website">
-<meta property="og:locale" content="pt_BR">
-<meta property="og:title" content="Friagem: loja de ar-condicionado de demonstração">
-<meta property="og:description" content="Calculadora de BTU, comparação de modelos e orçamento com instalação. Loja, marcas e preços fictícios.">
-<meta property="og:url" content="https://toshiro01001.github.io/ar-condicionado/">
-<meta property="og:image" content="https://toshiro01001.github.io/ar-condicionado/og.png">
-<meta name="twitter:card" content="summary_large_image">
-<link rel="icon" href="img/icone.svg" type="image/svg+xml">
-<link rel="preload" href="fontes/heroscn-bold.woff" as="font" type="font/woff" crossorigin>
-<link rel="stylesheet" href="css/estilo.css">
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta http-equiv="Content-Security-Policy" content="default-src 'none'; script-src 'self'; style-src 'self'; img-src 'self'; font-src 'self'; base-uri 'none'; form-action 'none'">
+  <meta name="referrer" content="no-referrer" />
+  <title>Friagem Ar-condicionado (loja de demonstração)</title>
+  <meta name="description" content="Loja de demonstração em Cuiabá: calculadora de BTU, catálogo fictício de ar-condicionado, orçamento de instalação e simulação de parcelas." />
+  <meta name="theme-color" content="#e7ecf1" />
+  <meta property="og:type" content="website" />
+  <meta property="og:locale" content="pt_BR" />
+  <meta property="og:title" content="Friagem: loja de ar-condicionado de demonstração" />
+  <meta property="og:description" content="Calculadora de BTU, comparação de modelos e orçamento com instalação. Loja, marcas e preços fictícios." />
+  <meta property="og:url" content="https://toshiro01001.github.io/ar-condicionado/" />
+  <meta property="og:image" content="https://toshiro01001.github.io/ar-condicionado/og.png" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <link rel="icon" href="./img/icone.svg" type="image/svg+xml" />
+  <link rel="stylesheet" href="./css/estilo.css?v=20261113" />
+  <script src="./js/cedo.js?v=20261113"></script>
+  <script type="module" crossorigin src="./assets/pagina.js?v=20261113"></script>
+  <link rel="stylesheet" crossorigin href="./assets/index.css?v=20261113">
 </head>
 <body>
-<a class="pular" href="#conteudo" id="pular">Pular para o conteúdo</a>
-<p class="faixa" role="region" aria-label="Aviso de demonstração">Loja de demonstração: produtos e preços fictícios</p>
-
-<svg class="simbolos" aria-hidden="true" focusable="false">
-  <symbol id="il-split" viewBox="0 0 240 130">
-    <rect x="18" y="34" width="204" height="56" rx="10" class="c-corpo"/>
-    <path d="M30 48h180M30 56h180M30 64h180" class="c-grade"/>
-    <path d="M24 80h192v6a4 4 0 0 1-4 4H28a4 4 0 0 1-4-4z" class="c-aleta"/>
-    <rect x="182" y="44" width="26" height="12" rx="2" class="c-tela"/>
-    <path d="M70 100c0 8-6 10-6 20M120 100c0 8-6 10-6 20M170 100c0 8-6 10-6 20" class="c-ar"/>
-  </symbol>
-  <symbol id="il-inverter" viewBox="0 0 240 130">
-    <path d="M18 44a12 12 0 0 1 12-12h180a12 12 0 0 1 12 12v30c0 10-8 16-16 16H34c-8 0-16-6-16-16z" class="c-corpo"/>
-    <path d="M34 50c14-12 26 12 40 0s26 12 40 0 26 12 40 0" class="c-ondinha"/>
-    <path d="M26 78h188" class="c-grade"/>
-    <rect x="178" y="42" width="30" height="14" rx="2" class="c-tela"/>
-    <path d="M70 100c0 8-6 10-6 20M120 100c0 8-6 10-6 20M170 100c0 8-6 10-6 20" class="c-ar"/>
-  </symbol>
-  <symbol id="il-janela" viewBox="0 0 240 130">
-    <rect x="52" y="14" width="136" height="102" rx="6" class="c-corpo"/>
-    <rect x="64" y="26" width="112" height="44" rx="2" class="c-painel"/>
-    <path d="M70 34h100M70 42h100M70 50h100M70 58h100" class="c-grade"/>
-    <circle cx="82" cy="92" r="11" class="c-painel"/>
-    <path d="M82 84v8" class="c-grade"/>
-    <rect x="104" y="84" width="60" height="14" rx="2" class="c-tela"/>
-    <path d="M36 8v114M204 8v114" class="c-parede"/>
-  </symbol>
-  <symbol id="il-pisoteto" viewBox="0 0 240 130">
-    <rect x="12" y="30" width="216" height="46" rx="6" class="c-corpo"/>
-    <path d="M22 62h196v8H22z" class="c-aleta"/>
-    <path d="M24 42h150M24 50h150" class="c-grade"/>
-    <rect x="186" y="40" width="28" height="12" rx="2" class="c-tela"/>
-    <path d="M12 16h216" class="c-parede"/>
-    <path d="M40 86c0 8 8 12 8 26M100 86c0 8 8 12 8 26M160 86c0 8 8 12 8 26" class="c-ar"/>
-  </symbol>
-  <symbol id="il-cassete" viewBox="0 0 240 130">
-    <path d="M8 22h224" class="c-parede"/>
-    <path d="M40 22h160l14 42H26z" class="c-corpo"/>
-    <rect x="86" y="30" width="68" height="26" class="c-painel"/>
-    <path d="M92 37h56M92 43h56M92 49h56" class="c-grade"/>
-    <path d="M26 64h188" class="c-aleta-linha"/>
-    <path d="M60 74c-6 10-22 12-26 34M180 74c6 10 22 12 26 34M100 74c0 10-6 16-6 36M140 74c0 10 6 16 6 36" class="c-ar"/>
-  </symbol>
-</svg>
-
-<header class="topo">
-  <div class="topo-dentro">
-    <a class="marca" href="#/">
-      <svg class="marca-sinal" viewBox="0 0 40 28" aria-hidden="true" focusable="false"><path d="M2 3h36M2 11h36M2 19h24"/></svg>
-      <span>Friagem</span>
+  <a class="pular" href="#conteudo" id="pular">Pular para o conteúdo</a>
+  <p class="faixa" role="region" aria-label="Aviso de demonstração">Loja de demonstração: produtos e preços fictícios</p>
+  <header class="nav">
+  <div class="nav__barra">
+    <a class="nav__marca" href="#/" aria-label="Friagem, voltar ao início">
+      <svg class="nav__simbolo" viewBox="0 0 26 20" aria-hidden="true" focusable="false"><path d="M2 4h22M2 10h22M2 16h14" /></svg>
+      <span class="nav__nome">friagem</span>
     </a>
-    <button class="menu-botao" id="menu-botao" type="button" aria-expanded="false" aria-controls="menu">Menu</button>
-    <nav id="menu" class="menu" aria-label="Principal">
+    <button class="nav__menu-botao" id="menu-botao" type="button" aria-expanded="false" aria-controls="menu">Menu</button>
+    <nav id="menu" class="nav__links" aria-label="Principal">
       <a href="#/catalogo" data-rota="catalogo">Catálogo</a>
       <a href="#/calculadora" data-rota="calculadora">Calculadora de BTU</a>
       <a href="#/orcamento" data-rota="orcamento">Orçamento <span id="contador" class="contador">(0)</span></a>
       <a href="#/duvidas" data-rota="duvidas">Dúvidas</a>
       <a href="#/como-funciona" data-rota="como-funciona">Como isto funciona</a>
     </nav>
+    <a class="bt nav__cta" href="#/calculadora">
+      <span>Calcular meu BTU</span>
+      <i class="bt__seta" aria-hidden="true"><svg viewBox="0 0 14 14"><path d="M1 7h12M8 2l5 5-5 5" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg></i>
+    </a>
   </div>
 </header>
 
-<noscript><p class="sem-js">Este site de demonstração precisa de JavaScript ligado para calcular e montar o orçamento.</p></noscript>
+  <noscript><p class="sem-js">Este site de demonstração precisa de JavaScript ligado para calcular e montar o orçamento.</p></noscript>
+  <main id="conteudo" tabindex="-1">
+    <section data-view="inicio" data-titulo="Friagem Ar-condicionado (loja de demonstração)">
+      <section class="hero" id="topo">
+  <h1 class="hero__titulo" tabindex="-1" aria-label="Cuiabá é quente. Seu quarto não precisa ser.">
+    <span class="tl hero__l1" aria-hidden="true"><span>Cuiabá é <b>quente.</b></span></span>
+    <span class="tl hero__l2" aria-hidden="true"><span>Seu quarto não precisa ser.</span></span>
+  </h1>
 
-<main id="conteudo" tabindex="-1">
+  <!-- onde o Split fica, na frente do título -->
+  <div class="hero__vaga" data-vaga="hero" aria-hidden="true"></div>
 
-<!-- INÍCIO -->
-<section data-view="inicio" data-titulo="Friagem Ar-condicionado (loja de demonstração)">
-  <div class="heroi">
-    <div class="aparelho" aria-hidden="true">
-      <div class="aparelho-grade"></div>
-      <div class="aparelho-led"><span id="led" class="led-digitos"></span><span class="led-grau">°C</span></div>
-      <div class="aparelho-aleta"></div>
-    </div>
-    <svg class="sopro" viewBox="0 0 600 600" preserveAspectRatio="none" aria-hidden="true" focusable="false">
-      <path class="sopro-massa" d="M90 0C170 170 30 290 190 420S470 500 600 600V0Z"/>
-      <path class="sopro-fio" d="M190 0C270 150 130 280 290 390S500 470 600 540"/>
-      <path class="sopro-fio" d="M300 0C370 130 240 250 390 350S530 420 600 460"/>
-      <path class="sopro-fio" d="M410 0C470 110 360 210 480 300S570 360 600 380"/>
-    </svg>
-    <div class="heroi-texto">
-      <h1 tabindex="-1">Cuiabá é quente. <br>Seu quarto não <br>precisa ser.</h1>
-      <p>Descubra quantos BTUs o seu ambiente pede (BTU é a medida da potência de um ar-condicionado), compare modelos lado a lado e veja o preço já com a instalação. Comece pelo botão "Calcular meu BTU".</p>
-      <div class="acoes">
-        <a class="botao botao-escuro" href="#/calculadora">Calcular meu BTU</a>
-        <a class="botao botao-contorno" href="#/catalogo">Ver o catálogo</a>
-      </div>
-    </div>
+  <p class="hero__texto sobe">Descubra quantos BTUs o seu ambiente pede,<br />compare modelos e veja o preço já com a instalação.</p>
+  <p class="hero__acoes sobe">
+    <a class="bt" href="#/calculadora"><span>Calcular meu BTU</span><i class="bt__seta" aria-hidden="true"><svg viewBox="0 0 14 14"><path d="M1 7h12M8 2l5 5-5 5" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg></i></a>
+    <a class="link" href="#/catalogo">Ver o catálogo</a>
+  </p>
+</section>
+
+      <section class="cena pecas" data-cena id="por-dentro">
+  <div class="cena__visual" aria-hidden="true">
+    <div class="cena__fixa"><div class="cena__vaga pecas__vaga" data-vaga="pecas"></div></div>
   </div>
-
-  <div class="bloco">
-    <h2>Como usar o site, em três passos</h2>
-    <ol class="trilha">
-      <li>
-        <h3><a href="#/calculadora">Calcule</a></h3>
-        <p>Diga o tamanho do cômodo, quantas pessoas ficam nele e se bate sol da tarde. O site mostra a conta linha por linha e já sugere modelos.</p>
-      </li>
-      <li>
-        <h3><a href="#/catalogo">Compare</a></h3>
-        <p>Filtre por BTU, tipo, tensão e preço. Marque "Comparar" em até 3 modelos para vê-los lado a lado.</p>
-      </li>
-      <li>
-        <h3><a href="#/orcamento">Orce e peça a visita</a></h3>
-        <p>Aperte "Adicionar ao orçamento" no modelo escolhido. Na tela Orçamento, some a instalação, veja as parcelas e teste o pedido de visita. Nada é cobrado nem enviado de verdade.</p>
-      </li>
-    </ol>
-  </div>
-
-  <div class="bloco bloco-branco">
-    <h2>Cinco tipos de aparelho</h2>
-    <p class="intro">O melhor tipo depende do ambiente, do forro e de quantas horas o aparelho fica ligado.</p>
-    <ul id="lista-tipos" class="tipos"></ul>
-  </div>
-
-  <div class="bloco bloco-escuro">
-    <h2>O que você vê antes de decidir</h2>
-    <dl class="claros">
-      <div><dt>A regra do cálculo</dt><dd>Ela fica escrita na tela, junto do aviso de que o resultado é uma estimativa.</dd></div>
-      <div><dt>A instalação na mesma conta</dt><dd>O valor sai por tipo de aparelho e por metro de tubulação.</dd></div>
-      <div><dt>Os juros das parcelas</dt><dd>A taxa, o valor de cada parcela e o total pago aparecem juntos.</dd></div>
-      <div><dt>O que cuidar depois</dt><dd>As dúvidas explicam filtro, limpeza, dreno e recarga de gás.</dd></div>
-    </dl>
+  <div class="cena__textos">
+    <header class="cena__abre">
+      <h2 class="titulo">
+        <span class="tl"><span>Por dentro</span></span>
+        <span class="tl"><span>de um <em>Split.</em></span></span>
+      </h2>
+      <p class="corpo sobe">O ar do quarto entra por cima, passa por quatro peças e sai gelado por baixo. Saber o que cada uma faz ajuda a cuidar do aparelho.</p>
+    </header>
+    <article class="passo" data-passo="tampa">
+      <span class="passo__num sobe">01</span>
+      <h3 class="passo__titulo sobe">Tampa</h3>
+      <p class="passo__texto sobe">A frente do aparelho. Ela levanta para você alcançar os filtros, sem ferramenta.</p>
+    </article>
+    <article class="passo" data-passo="filtro">
+      <span class="passo__num sobe">02</span>
+      <h3 class="passo__titulo sobe">Filtros</h3>
+      <p class="passo__texto sobe">Seguram a poeira antes de o ar chegar à serpentina. Filtro sujo reduz a passagem do ar e prejudica o resfriamento.</p>
+    </article>
+    <article class="passo" data-passo="serpentina">
+      <span class="passo__num sobe">03</span>
+      <h3 class="passo__titulo sobe">Serpentina</h3>
+      <p class="passo__texto sobe">Tubos de cobre com o gás frio, cercados de aletas de alumínio. É aqui que o ar perde calor.</p>
+    </article>
+    <article class="passo" data-passo="ventilador">
+      <span class="passo__num sobe">04</span>
+      <h3 class="passo__titulo sobe">Ventilador</h3>
+      <p class="passo__texto sobe">Um cilindro de pás que gira e empurra o ar gelado para o ambiente, pela saída de baixo.</p>
+    </article>
   </div>
 </section>
 
+      <section class="cena planejamento" data-cena id="como-usar">
+  <div class="cena__visual" aria-hidden="true">
+    <div class="cena__fixa"><div class="cena__vaga planejamento__vaga" data-vaga="calculo"></div></div>
+  </div>
+  <div class="cena__textos">
+    <header class="cena__abre">
+      <h2 class="titulo">
+        <span class="tl"><span>Como usar o site,</span></span>
+        <span class="tl"><span>em três <em>passos.</em></span></span>
+      </h2>
+      <p class="corpo sobe">Do tamanho do cômodo ao pedido de visita, tudo acontece aqui. Nada é cobrado nem enviado de verdade.</p>
+    </header>
+    <article class="passo" data-passo="calcule">
+      <span class="passo__num sobe">01</span>
+      <h3 class="passo__titulo sobe"><a class="link" href="#/calculadora">Calcule</a></h3>
+      <p class="passo__texto sobe">Diga o tamanho do cômodo, quantas pessoas ficam nele e se bate sol da tarde. O site mostra a conta linha por linha e já sugere modelos.</p>
+    </article>
+    <article class="passo" data-passo="compare">
+      <span class="passo__num sobe">02</span>
+      <h3 class="passo__titulo sobe"><a class="link" href="#/catalogo">Compare</a></h3>
+      <p class="passo__texto sobe">Filtre por BTU, tipo, tensão e preço. Marque "Comparar" em até 3 modelos para vê-los lado a lado.</p>
+    </article>
+    <article class="passo" data-passo="orce">
+      <span class="passo__num sobe">03</span>
+      <h3 class="passo__titulo sobe"><a class="link" href="#/orcamento">Orce e peça a visita</a></h3>
+      <p class="passo__texto sobe">Aperte "Adicionar ao orçamento" no modelo escolhido. Na tela Orçamento, some a instalação, veja as parcelas e teste o pedido de visita.</p>
+    </article>
+  </div>
+</section>
+
+      <section class="cena cena--meio claras" data-cena id="claras">
+  <div class="cena__visual" aria-hidden="true">
+    <div class="cena__fixa"><div class="cena__vaga claras__vaga" data-vaga="claras"></div></div>
+  </div>
+  <div class="cena__textos claras__textos">
+    <!-- a palavra e a frase também são desenhadas no 3D, atrás do Split de vidro (é o que ele entorta); estas
+         ficam para leitor de tela, busca e para quando não houver WebGL -->
+    <h2 class="claras__palavra" data-vidro><span class="vl">Às</span> <span class="vl">claras</span></h2>
+    <p class="claras__colchete" data-vidro>
+      <span class="vl claras__c">[</span>
+      <span class="claras__frase"><span class="vl">a regra, a instalação e os juros</span> <span class="vl">antes de você decidir</span></span>
+      <span class="vl claras__c">]</span>
+    </p>
+    <div class="claras__fim">
+      <p class="claras__texto corpo sobe">A regra do cálculo fica escrita na tela, junto do aviso de que o resultado é uma estimativa. O valor da instalação sai por tipo de aparelho e por metro de tubulação.</p>
+      <div class="claras__acao sobe">
+        <p>A taxa, o valor de cada parcela e o total pago aparecem juntos.</p>
+        <a class="bt" href="#/orcamento">
+          <span>Ver o orçamento</span>
+          <i class="bt__seta" aria-hidden="true"><svg viewBox="0 0 14 14"><path d="M1 7h12M8 2l5 5-5 5" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg></i>
+        </a>
+      </div>
+    </div>
+  </div>
+</section>
+
+      <section class="equipe" id="tipos">
+  <header class="equipe__topo">
+    <h2 class="titulo">
+      <span class="tl"><span>Cinco tipos</span></span>
+      <span class="tl"><span>de <em>aparelho.</em></span></span>
+    </h2>
+    <p class="corpo sobe">O melhor tipo depende do ambiente, do forro e de quantas horas o aparelho fica ligado.</p>
+  </header>
+
+  <!-- o Split do palco não aparece aqui: a vaga só marca a hora de ele sair -->
+  <div class="equipe__vaga" data-vaga="tipos" aria-hidden="true"></div>
+
+  <div class="equipe__palco" role="tabpanel" id="equipe-painel" aria-labelledby="equipe-t0">
+    <p class="equipe__nome" aria-hidden="true"><span class="equipe__letras">Split</span></p>
+    <figure class="equipe__retrato">
+      <img class="is-atual" src="./img/tipo-split.webp" alt="Ar-condicionado Split branco, de parede, com o visor marcando 24 graus" width="960" height="720" />
+      <img src="./img/tipo-inverter.webp" alt="Split Inverter branco com uma faixa de vidro escuro na frente" width="960" height="720" loading="lazy" />
+      <img src="./img/tipo-janela.webp" alt="Ar-condicionado de janela, uma caixa com grade na frente e dois botões" width="960" height="720" loading="lazy" />
+      <img src="./img/tipo-pisoteto.webp" alt="Ar-condicionado piso-teto, largo e baixo, visto por baixo" width="960" height="720" loading="lazy" />
+      <img src="./img/tipo-cassete.webp" alt="Ar-condicionado cassete, painel quadrado de forro com grade no meio" width="960" height="720" loading="lazy" />
+    </figure>
+    <div class="equipe__info" aria-live="polite">
+      <p class="equipe__quem"><b>Split</b><span>De parede</span></p>
+      <p class="equipe__cro">Instalação básica de exemplo: R$ 450</p>
+      <p class="equipe__bio">Vai na parede, com uma unidade fora do ambiente. Serve bem a quartos e salas de uso comum.</p>
+    </div>
+    <a class="bt equipe__agendar" href="#/catalogo?tipo=split">
+      <span>Ver modelos de Split</span>
+      <i class="bt__seta" aria-hidden="true"><svg viewBox="0 0 14 14"><path d="M1 7h12M8 2l5 5-5 5" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg></i>
+    </a>
+  </div>
+
+  <ul class="equipe__seletor" role="tablist" aria-label="Tipos de aparelho">
+    <li role="presentation"><button class="equipe__aba is-atual" role="tab" id="equipe-t0" aria-selected="true" aria-controls="equipe-painel"><img src="./img/tipo-split.webp" alt="" width="960" height="720" /><span>Split</span><i class="equipe__tempo" aria-hidden="true"></i></button></li>
+    <li role="presentation"><button class="equipe__aba" role="tab" id="equipe-t1" aria-selected="false" aria-controls="equipe-painel"><img src="./img/tipo-inverter.webp" alt="" width="960" height="720" loading="lazy" /><span>Inverter</span><i class="equipe__tempo" aria-hidden="true"></i></button></li>
+    <li role="presentation"><button class="equipe__aba" role="tab" id="equipe-t2" aria-selected="false" aria-controls="equipe-painel"><img src="./img/tipo-janela.webp" alt="" width="960" height="720" loading="lazy" /><span>Janela</span><i class="equipe__tempo" aria-hidden="true"></i></button></li>
+    <li role="presentation"><button class="equipe__aba" role="tab" id="equipe-t3" aria-selected="false" aria-controls="equipe-painel"><img src="./img/tipo-pisoteto.webp" alt="" width="960" height="720" loading="lazy" /><span>Piso-teto</span><i class="equipe__tempo" aria-hidden="true"></i></button></li>
+    <li role="presentation"><button class="equipe__aba" role="tab" id="equipe-t4" aria-selected="false" aria-controls="equipe-painel"><img src="./img/tipo-cassete.webp" alt="" width="960" height="720" loading="lazy" /><span>Cassete</span><i class="equipe__tempo" aria-hidden="true"></i></button></li>
+  </ul>
+</section>
+
+      <section class="agendar" id="calcule">
+  <h2 class="agendar__titulo" aria-label="Quantos BTUs o seu cômodo pede?">
+    <span class="tl agendar__l1" aria-hidden="true"><span>Quantos <b>BTUs</b></span></span>
+    <span class="tl agendar__l2" aria-hidden="true"><span>o cômodo pede?</span></span>
+  </h2>
+  <!-- o Split volta sozinho, pousado sobre a segunda linha (como no hero) -->
+  <div class="agendar__vaga" data-vaga="chamada" aria-hidden="true"></div>
+
+  <div class="agendar__grade">
+    <div class="agendar__info">
+      <p class="corpo sobe"><strong>Isto é uma estimativa.</strong> A regra não enxerga tipo de telhado, isolamento, janelas grandes nem a circulação do ar. Antes de comprar, um técnico precisa ver o ambiente.</p>
+      <dl class="agendar__dados sobe">
+        <div><dt>Sem sol da tarde</dt><dd>600 BTU por m²</dd></div>
+        <div><dt>Com sol da tarde</dt><dd>800 BTU por m²</dd></div>
+        <div><dt>Cada pessoa além da primeira</dt><dd>Mais 600 BTU</dd></div>
+        <div><dt>Cada equipamento que esquenta</dt><dd>Mais 600 BTU<br /><small>TV, computador ou frigobar</small></dd></div>
+      </dl>
+    </div>
+
+    <form class="form sobe" id="mini-calc" novalidate>
+      <div class="cp">
+        <input id="m-area" name="area" inputmode="decimal" autocomplete="off" required placeholder=" " value="12" />
+        <label for="m-area">Área do ambiente, em m²</label>
+        <small class="cp__erro">Digite a área, de 1 a 200 m².</small>
+      </div>
+      <fieldset class="escolha">
+        <legend>Pessoas no ambiente</legend>
+        <label><input type="radio" name="pessoas" value="1" /><span>1</span></label>
+        <label><input type="radio" name="pessoas" value="2" checked /><span>2</span></label>
+        <label><input type="radio" name="pessoas" value="3" /><span>3</span></label>
+        <label><input type="radio" name="pessoas" value="4" /><span>4</span></label>
+        <label><input type="radio" name="pessoas" value="5" /><span>5</span></label>
+      </fieldset>
+      <fieldset class="escolha">
+        <legend>Bate sol direto depois do meio-dia?</legend>
+        <label><input type="radio" name="sol" value="nao" checked /><span>Não</span></label>
+        <label><input type="radio" name="sol" value="sim" /><span>Sim</span></label>
+      </fieldset>
+      <p class="mini__visor" role="status" aria-live="polite">
+        <span>Estimativa em BTU por hora</span>
+        <b id="m-total">7.800</b>
+        <small id="m-indicado"></small>
+      </p>
+      <a class="bt form__enviar" id="m-ver" href="#/calculadora">
+        <span>Ver modelos</span>
+        <i class="bt__seta" aria-hidden="true"><svg viewBox="0 0 14 14"><path d="M1 7h12M8 2l5 5-5 5" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg></i>
+      </a>
+      <p class="mini__nota">Conta rápida, com pé-direito de até 2,70 m e nenhum equipamento que esquenta. A <a class="link" href="#/calculadora">calculadora completa</a> considera o resto e mostra a conta linha por linha.</p>
+    </form>
+  </div>
+</section>
+
+      <section class="perguntas" id="perguntas">
+  <div class="perguntas__lado">
+    <h2 class="titulo">
+      <span class="tl"><span>Dúvidas</span></span>
+      <span class="tl"><span><em>frequentes.</em></span></span>
+    </h2>
+    <p class="corpo sobe">Informação geral. O manual do aparelho e o técnico que vê o local têm a palavra final.</p>
+    <p class="corpo sobe"><a class="link" href="#/duvidas">Ver todas as dúvidas</a></p>
+    <div class="perguntas__vaga" data-vaga="perguntas" aria-hidden="true"></div>
+  </div>
+  <ul class="perguntas__lista">
+    <li class="pergunta sobe">
+      <button class="pergunta__q" aria-expanded="false" aria-controls="r1" id="q1">O que é BTU?<i aria-hidden="true"></i></button>
+      <div class="pergunta__r" id="r1" role="region" aria-labelledby="q1"><p>BTU é uma unidade de energia térmica. No ar-condicionado, o número indica quanto calor o aparelho consegue retirar do ambiente por hora. Por isso o certo é BTU por hora, embora quase todo mundo fale só BTU.</p></div>
+    </li>
+    <li class="pergunta sobe">
+      <button class="pergunta__q" aria-expanded="false" aria-controls="r2" id="q2">A regra de 600 ou 800 BTU por m² é exata?<i aria-hidden="true"></i></button>
+      <div class="pergunta__r" id="r2" role="region" aria-labelledby="q2"><p>Não. É uma regra prática de mercado, boa para chegar a uma primeira estimativa. O resultado muda com telhado, isolamento, tamanho das janelas e direção do sol. Por isso a escolha final deve passar por um técnico.</p></div>
+    </li>
+    <li class="pergunta sobe">
+      <button class="pergunta__q" aria-expanded="false" aria-controls="r3" id="q3">Qual a diferença entre Inverter e convencional?<i aria-hidden="true"></i></button>
+      <div class="pergunta__r" id="r3" role="region" aria-labelledby="q3"><p>O compressor convencional funciona em liga e desliga. O Inverter varia a velocidade e ajusta a potência conforme a necessidade, o que mantém a temperatura mais estável e costuma deixar o funcionamento mais silencioso.</p></div>
+    </li>
+    <li class="pergunta sobe">
+      <button class="pergunta__q" aria-expanded="false" aria-controls="r4" id="q4">Por que a distância da tubulação muda o preço?<i aria-hidden="true"></i></button>
+      <div class="pergunta__r" id="r4" role="region" aria-labelledby="q4"><p>Mais distância pede mais tubo, isolamento e mão de obra, e pode exigir carga adicional de gás. Cada fabricante define no manual a distância máxima e o desnível permitidos entre as unidades.</p></div>
+    </li>
+    <li class="pergunta sobe">
+      <button class="pergunta__q" aria-expanded="false" aria-controls="r5" id="q5">De quanto em quanto tempo limpo o filtro?<i aria-hidden="true"></i></button>
+      <div class="pergunta__r" id="r5" role="region" aria-labelledby="q5"><p>Muitos manuais pedem limpeza a cada duas a quatro semanas em uso frequente. Em períodos de seca, com mais poeira e fumaça, o filtro suja mais rápido. Filtro sujo reduz a passagem do ar e prejudica o resfriamento.</p></div>
+    </li>
+    <li class="pergunta sobe">
+      <button class="pergunta__q" aria-expanded="false" aria-controls="r6" id="q6">Preciso recarregar o gás todo ano?<i aria-hidden="true"></i></button>
+      <div class="pergunta__r" id="r6" role="region" aria-labelledby="q6"><p>Não. O gás circula em um sistema fechado e não se gasta com o uso. Se está faltando gás, provavelmente há vazamento, que precisa ser encontrado e consertado antes da recarga.</p></div>
+    </li>
+  </ul>
+</section>
+
+    </section>
+    <div class="loja">
 <!-- CATÁLOGO -->
 <section data-view="catalogo" data-titulo="Catálogo | Friagem (demonstração)" hidden>
   <div class="bloco cabeca">
@@ -419,23 +561,41 @@
     </ul>
   </div>
 </section>
-</main>
-
-<div id="bandeja" class="bandeja" hidden>
-  <p id="bandeja-texto"></p>
-  <a id="bandeja-ver" class="botao botao-claro" href="#/comparar">Ver comparação</a>
-  <button id="bandeja-limpar" class="botao-link" type="button">Limpar</button>
 </div>
-<div id="aviso" class="aviso" role="status" aria-live="polite"></div>
 
-<footer class="rodape">
-  <p>Demonstração feita por <a href="https://mileumalinhas.com.br" rel="noopener">Mil e Uma Linhas!</a></p>
-  <p>Quer uma loja assim? Escreva para <a href="mailto:contato@mileumalinhas.com.br">contato@mileumalinhas.com.br</a>.</p>
-  <p>A Friagem, suas marcas e seus preços são fictícios. <a href="#/como-funciona">Como isto funciona</a></p>
+  </main>
+  <footer class="rodape" id="rodape">
+  <!-- o Split pousa aqui, em cima do nome -->
+  <div class="rodape__pouso" aria-hidden="true"><span class="rodape__vaga" data-vaga="rodape"></span></div>
+  <p class="rodape__marca">friagem</p>
+  <div class="rodape__grade">
+    <nav class="rodape__links" aria-label="Rodapé">
+      <a class="link" href="#/calculadora">Calculadora</a>
+      <a class="link" href="#/catalogo">Catálogo</a>
+      <a class="link" href="#/comparar">Comparar</a>
+      <a class="link" href="#/orcamento">Orçamento</a>
+      <a class="link" href="#/duvidas">Dúvidas</a>
+    </nav>
+    <div class="rodape__bloco">
+      <p>Demonstração feita por <a class="link" href="https://mileumalinhas.com.br" rel="noopener">Mil e Uma Linhas!</a></p>
+      <p>Quer uma loja assim? Escreva para <a class="link" href="mailto:contato@mileumalinhas.com.br">contato@mileumalinhas.com.br</a>.</p>
+    </div>
+    <div class="rodape__bloco">
+      <p>A Friagem, suas marcas e seus preços são fictícios.</p>
+      <p><a class="link" href="#/como-funciona">Como isto funciona</a></p>
+    </div>
+  </div>
 </footer>
 
-<script src="js/dados.js"></script>
-<script src="js/logica.js"></script>
-<script src="js/app.js"></script>
+  <canvas class="palco" aria-hidden="true"></canvas>
+  <div id="bandeja" class="bandeja" hidden>
+    <p id="bandeja-texto"></p>
+    <a id="bandeja-ver" class="botao botao-claro" href="#/comparar">Ver comparação</a>
+    <button id="bandeja-limpar" class="botao-link" type="button">Limpar</button>
+  </div>
+  <div id="aviso" class="aviso" role="status" aria-live="polite"></div>
+  <script src="./js/dados.js?v=20261113"></script>
+  <script src="./js/logica.js?v=20261113"></script>
+  <script src="./js/app.js?v=20261113"></script>
 </body>
 </html>

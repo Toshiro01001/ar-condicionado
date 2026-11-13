@@ -11,7 +11,7 @@ const { chromium, devices } = require('playwright');
 
 const RAIZ = path.resolve(__dirname, '..');
 const SAIDA = process.argv[2] ? path.resolve(process.argv[2]) : null;
-const TIPOS_MIME = { '.html': 'text/html; charset=utf-8', '.css': 'text/css', '.js': 'text/javascript', '.svg': 'image/svg+xml', '.woff': 'font/woff' };
+const TIPOS_MIME = { '.html': 'text/html; charset=utf-8', '.css': 'text/css', '.js': 'text/javascript', '.svg': 'image/svg+xml', '.woff': 'font/woff', '.woff2': 'font/woff2', '.webp': 'image/webp' };
 
 function servidor() {
   return new Promise((ok) => {
@@ -75,7 +75,7 @@ async function fluxoCompleto(browser, cfg, base) {
   const page = await ctx.newPage();
   const erros = [];
   const externos = [];
-  page.on('console', (m) => { if (m.type() === 'error' || m.type() === 'warning') erros.push(m.type() + ': ' + m.text()); });
+  page.on('console', (m) => { if ((m.type() === 'error' || m.type() === 'warning') && !/GL Driver|WebGL|GPU stall|swiftshader/i.test(m.text())) erros.push(m.type() + ': ' + m.text()); });
   page.on('pageerror', (e) => erros.push('pageerror: ' + e.message));
   page.on('requestfailed', (r) => erros.push('falhou: ' + r.url()));
   page.on('response', (r) => { if (r.status() >= 400) erros.push(r.status() + ': ' + r.url()); });
@@ -87,9 +87,9 @@ async function fluxoCompleto(browser, cfg, base) {
   confere(await page.locator('.faixa').innerText() === 'Loja de demonstração: produtos e preços fictícios', 'faixa de demonstração visível');
   confere((await page.locator('.rodape').innerText()).includes('Demonstração feita por Mil e Uma Linhas!'), 'rodapé com a assinatura');
   confere(await page.locator('.rodape a[href="https://mileumalinhas.com.br"]').count() === 1, 'link do rodapé correto');
-  confere(await page.evaluate(() => document.fonts.check('700 40px "Heros Cn"')), 'fonte própria carregada');
+  confere(await page.evaluate(() => document.fonts.check('300 40px "Albert Sans Variable"')), 'fonte própria carregada');
   await semRolagemLateral(page, 'início');
-  const cta = await page.locator('.heroi .botao-escuro').boundingBox();
+  const cta = await page.locator('.hero__acoes .bt').boundingBox();
   confere(cta.y + cta.height <= (cfg.celular ? 2000 : 800), 'chamada principal visível sem rolar no computador', cta);
   await foto(page, P, '01-inicio-topo');
   await foto(page, P, '02-inicio-inteira', true);
@@ -368,8 +368,9 @@ async function acessibilidade(browser, base) {
   const c4 = await browser.newContext({ viewport: { width: 1366, height: 800 }, reducedMotion: 'reduce' });
   const p4 = await c4.newPage();
   await p4.goto(base, { waitUntil: 'networkidle' });
-  const anim = await p4.evaluate(() => ({ nome: getComputedStyle(document.querySelector('.aparelho-aleta')).animationName, on: document.querySelectorAll('#led g:nth-child(1) .seg-on').length }));
-  confere(anim.nome === 'none' && anim.on === 5, 'movimento reduzido: sem animação e visor já em 24', anim);
+  await p4.waitForFunction(() => document.body.dataset.pronto === '1', null, { timeout: 120000 });
+  const anim = await p4.evaluate(() => ({ marca: document.documentElement.classList.contains('is-reduced'), suave: document.documentElement.classList.contains('lenis-smooth'), titulo: getComputedStyle(document.querySelector('.hero__l1 > span')).transform }));
+  confere(anim.marca && !anim.suave && (anim.titulo === 'none' || anim.titulo === 'matrix(1, 0, 0, 1, 0, 0)'), 'movimento reduzido: sem rolagem suave e título já no lugar', anim);
   await c4.close();
 
   const c3 = await browser.newContext({ viewport: { width: 1366, height: 800 } });
@@ -387,7 +388,8 @@ async function acessibilidade(browser, base) {
   const porta = s.address().port;
   const base = `http://127.0.0.1:${porta}/ar-condicionado/`;
   if (SAIDA) fs.mkdirSync(SAIDA, { recursive: true });
-  const browser = await chromium.launch();
+  // o início desenha o aparelho em WebGL: sem placa de vídeo, o Chromium usa o desenho por software
+  const browser = await chromium.launch({ args: ['--use-gl=angle', '--use-angle=swiftshader', '--enable-unsafe-swiftshader', '--ignore-gpu-blocklist'] });
   const iPhone = devices['iPhone 13'];
   const android320 = { viewport: { width: 320, height: 640 }, deviceScaleFactor: 2, isMobile: true, hasTouch: true, locale: 'pt-BR' };
   await fluxoCompleto(browser, { nome: 'Computador 1366x800', prefixo: 'computador', contexto: { viewport: { width: 1366, height: 800 }, deviceScaleFactor: 2, locale: 'pt-BR' } }, base);

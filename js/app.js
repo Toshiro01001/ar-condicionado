@@ -78,17 +78,17 @@
     }
     return n;
   }
+  /* A imagem de cada tipo é uma foto do modelo 3D feito para este site (img/tipo-*.webp, fundo transparente). */
   function ilustracao(tipo) {
-    var NS = 'http://www.w3.org/2000/svg';
-    var s = document.createElementNS(NS, 'svg');
-    s.setAttribute('viewBox', '0 0 240 130');
-    s.setAttribute('class', 'ilustra');
-    s.setAttribute('aria-hidden', 'true');
-    s.setAttribute('focusable', 'false');
-    var u = document.createElementNS(NS, 'use');
-    u.setAttribute('href', '#' + D.TIPOS[tipo].simbolo);
-    s.appendChild(u);
-    return s;
+    var i = document.createElement('img');
+    i.className = 'ilustra';
+    i.src = 'img/tipo-' + tipo + '.webp';
+    i.alt = '';
+    i.width = 960;
+    i.height = 720;
+    i.loading = 'lazy';
+    i.decoding = 'async';
+    return i;
   }
   var avisoTempo;
   function avisar(msg) {
@@ -581,32 +581,8 @@
   }
 
   /* ---------- início ---------- */
-  function montarInicio() {
-    var ul = $('lista-tipos');
-    Object.keys(D.TIPOS).forEach(function (t) {
-      var d = D.TIPOS[t];
-      ul.appendChild(el('li', null, ilustracao(t),
-        el('div', null,
-          el('h3', { text: d.nome }),
-          el('p', { text: d.uso }),
-          el('a', { href: '#/catalogo?tipo=' + t, text: 'Ver modelos de ' + d.nome })
-        )));
-    });
-    ul.appendChild(el('li', { class: 'tipos-chamada' },
-      el('h3', { text: 'Ainda em dúvida?' }),
-      el('p', { text: 'Comece pelo cálculo. O resultado sugere modelos de tipos diferentes.' }),
-      el('a', { class: 'botao botao-escuro', href: '#/calculadora', text: 'Calcular meu BTU' })));
-    var led = $('led');
-    var calmo = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
-    if (calmo) { desenharDigitos(led, '24'); return; }
-    var t = 38;
-    desenharDigitos(led, String(t));
-    var tic = setInterval(function () {
-      t -= 1;
-      desenharDigitos(led, String(t));
-      if (t <= 24) clearInterval(tic);
-    }, 110);
-  }
+  /* A tela inicial é montada pelo módulo da página (assets/): aqui não há nada a desenhar. */
+  function montarInicio() {}
 
   /* ---------- rotas ---------- */
   var ROTAS = { inicio: 1, catalogo: 1, calculadora: 1, comparar: 1, orcamento: 1, duvidas: 1, 'como-funciona': 1 };
