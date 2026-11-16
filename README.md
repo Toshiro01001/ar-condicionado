@@ -26,7 +26,7 @@ Quem quiser saber o que roda por trás encontra a explicação na tela "Como ist
 
 ## Como funciona (parte técnica)
 
-É um site estático de uma página só. As telas ficam em `index.html` e o JavaScript mostra uma de cada vez conforme o endereço (`#/catalogo`, `#/calculadora` e assim por diante). Não há servidor nem serviços de terceiros. A tela inicial vem pronta em `assets/pagina.js` e `assets/index.css`; o código-fonte dela fica fora deste repositório.
+É um site estático de uma página só. As telas ficam em `index.html` e o JavaScript mostra uma de cada vez conforme o endereço (`#/catalogo`, `#/calculadora` e assim por diante). Não há servidor nem serviços de terceiros. A tela inicial vem pronta em `assets/pagina.js` e `assets/index.css`; o título e os textos aparecem primeiro, e o aparelho em 3D chega logo depois, em um arquivo à parte (`assets/palco-*.js`), para a página abrir rápido; o código-fonte dela fica fora deste repositório.
 
 | Arquivo | Para que serve |
 | --- | --- |
